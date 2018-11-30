@@ -1,0 +1,149 @@
+/* ------------------------
+GLOBAL
+-------------------------- */
+body{
+    background: url(https://www.youngisthan.in/wp-content/uploads/2015/07/good-friends-best-friends.jpg) no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+hr{
+    border:.5px solid rgb(162, 162, 162);
+}
+#survey{
+    margin-left:2.5%;
+    margin-right:62.5%;
+    margin-top:2%;
+    margin-bottom:7.5%;
+    background-color:white;
+    padding:1.5%;
+    border-radius:10px; 
+}
+/* ------------------------
+HEADER 
+-------------------------- */
+
+header{
+    /* margin: 0 10%;
+    margin-top:2%; */
+}
+
+header h1{
+    color:rgb(107, 107, 250);
+    font-size:40px;
+    font-weight:900;
+}
+header h2{
+    font-size:20px;
+    font-weight:900;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+header p{
+    margin-bottom:5px;
+}
+
+#about h3{
+    font-weight:900;
+    margin-bottom:5px;
+    margin-top:25px;
+}
+#photo{
+    margin-bottom:25px;
+}
+
+#about{
+    /* margin: 0 10%; */
+}
+/* ------------------------
+QUESTIONS 
+-------------------------- */
+#section{
+    /* margin:0 10%; */
+}
+input{
+    width:100%;
+    margin-bottom:15px;
+}
+.question{
+margin:2% 0;
+}
+
+.survey-buttons{
+    display:inline;
+}
+
+.survey-buttons input{
+    vertical-align:top;
+    display:inline-block;
+}
+
+.question h4{
+ 
+    font-weight:900;
+}
+
+.question h5{
+    color:rgb(107, 107, 250);
+    font-style: italic;
+    font-weight:900;
+    margin:1% 0;
+}
+
+
+button{
+    width:80px;
+    height:40px;
+    float:right;
+    margin-right:10%;
+    background:rgb(107, 107, 250);
+    padding:.5% 1%;
+    border-radius:25px;
+    color:white;
+    font-weight:bolder;
+    font-size:11px;
+}
+/* ------------------------
+FOOTER 
+-------------------------- */
+
+footer {
+    background-color: rgb(48, 47, 41);
+    height: 70px;
+    position: fixed;
+    width:100%;
+    border-top: 3px rgb(0, 104, 168) solid;
+    bottom: 0;
+  }
+  
+  footer img {
+    width: 40px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+  }
+  
+  .footer-container {
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #github {
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  #linkedin {
+    border-radius: 6%;
+    margin: 10px;
+    width: 35px;
+  }
+  
+  #gmail {
+    border-radius: 5%;
+    margin: 10px;
+    margin-bottom: 10px;
+    width: 35px;
+  }

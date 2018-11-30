@@ -1,0 +1,38 @@
+footer {
+    background-color: rgb(48, 47, 41);
+    height: 70px;
+    position: fixed;
+    width:100%;
+    border-top: 3px rgb(0, 104, 168) solid;
+    bottom: 0;
+    
+  }
+  
+  footer img {
+    width: 40px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+  }
+  
+  .footer-container {
+    text-align: center;
+  }
+  
+  #github {
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  #linkedin {
+    border-radius: 6%;
+    margin: 10px;
+    width: 35px;
+  }
+  
+  #gmail {
+    border-radius: 5%;
+    margin: 10px;
+    margin-bottom: 10px;
+    width: 35px;
+  }
