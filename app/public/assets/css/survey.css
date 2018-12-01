@@ -132,6 +132,13 @@ button{
     font-weight:bolder;
     font-size:11px;
 }
+
+#validation-text{
+    color:red;
+    font-weight:bold;
+    margin-top:5px;
+}
+
 /* ------------------------
 FOOTER 
 -------------------------- */

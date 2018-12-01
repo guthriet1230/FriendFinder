@@ -1,8 +1,21 @@
-let friends = [
+let profileLog = [
   {
-    name: "Ahmed",
-    photo:
-      "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    scores: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
+    name:"Tyler G.",
+    photo:"https://media.licdn.com/dms/image/C4E03AQEvRaqHN5PGxQ/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=j_LaEkLw9dt8mbZhRSBH0Xr8jDY2eEIZfENi6MZhRJs",
+    scores:[
+        5,
+        1,
+        4,
+        4,
+        5,
+        1,
+        2,
+        5,
+        4,
+        1
+      ]
   }
+
 ];
+
+module.exports = profileLog;

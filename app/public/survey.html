@@ -174,12 +174,146 @@
                 </div>
                 </div>
                 <hr />
+          <!-- --------------------  QUESTION 6  --------------------- -->
           
+        <div class="question">
+            <h4>Question 6:</h4>
+            <h5>
+                    You believe in ghosts.
+            </h5>
+            <div class="survey-buttons">
+            <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
+                <input type="radio" name="q6" value="1"></input>
+            </label> 
+            <label>2 
+                <input type="radio" name="q6" value="2"></input>
+            </label> 
+            <label>3
+                <input type="radio" name="q6" value="3"></input>
+            </label> 
+            <label>4
+                <input type="radio" name="q6" value="4"></input>
+            </label> 
+            <label>5 <span class="clarify-agree"><img src="/assets/images/thumbsUp.png"></span>
+                <input type="radio" name="q6" value="5"></input>
+            </label> 
+            </div>
+            </div>
+            <hr />
+
+        <!-- --------------------  QUESTION 7  --------------------- -->
+          
+        <div class="question">
+            <h4>Question 7:</h4>
+            <h5>
+                    You think the Lion King is the best movie ever made.
+            </h5>
+            <div class="survey-buttons">
+            <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
+                <input type="radio" name="q7" value="1"></input>
+            </label> 
+            <label>2 
+                <input type="radio" name="q7" value="2"></input>
+            </label> 
+            <label>3
+                <input type="radio" name="q7" value="3"></input>
+            </label> 
+            <label>4
+                <input type="radio" name="q7" value="4"></input>
+            </label> 
+            <label>5 <span class="clarify-agree"><img src="/assets/images/thumbsUp.png"></span>
+                <input type="radio" name="q7" value="5"></input>
+            </label> 
+            </div>
+            </div>
+            <hr /> 
+            
+            <!-- --------------------  QUESTION 8  --------------------- -->
+          
+        <div class="question">
+            <h4>Question 8:</h4>
+            <h5>
+                    You enjoy spinning yarn.
+            </h5>
+            <div class="survey-buttons">
+            <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
+                <input type="radio" name="q8" value="1"></input>
+            </label> 
+            <label>2 
+                <input type="radio" name="q8" value="2"></input>
+            </label> 
+            <label>3
+                <input type="radio" name="q8" value="3"></input>
+            </label> 
+            <label>4
+                <input type="radio" name="q8" value="4"></input>
+            </label> 
+            <label>5 <span class="clarify-agree"><img src="/assets/images/thumbsUp.png"></span>
+                <input type="radio" name="q8" value="5"></input>
+            </label> 
+            </div>
+            </div>
+            <hr />
+
+            <!-- --------------------  QUESTION 9  --------------------- -->
+          
+        <div class="question">
+            <h4>Question 9:</h4>
+            <h5>
+                    You love to shop at Tommy Bahama.
+            </h5>
+            <div class="survey-buttons">
+            <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
+                <input type="radio" name="q9" value="1"></input>
+            </label> 
+            <label>2 
+                <input type="radio" name="q9" value="2"></input>
+            </label> 
+            <label>3
+                <input type="radio" name="q9" value="3"></input>
+            </label> 
+            <label>4
+                <input type="radio" name="q9" value="4"></input>
+            </label> 
+            <label>5 <span class="clarify-agree"><img src="/assets/images/thumbsUp.png"></span>
+                <input type="radio" name="q9" value="5"></input>
+            </label> 
+            </div>
+            </div>
+            <hr />
+
+            <!-- --------------------  QUESTION 10  --------------------- -->
+          
+        <div class="question">
+            <h4>Question 10:</h4>
+            <h5>
+                    You enjoy taking surveys.
+            </h5>
+            <div class="survey-buttons">
+            <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
+                <input type="radio" name="q10" value="1"></input>
+            </label> 
+            <label>2 
+                <input type="radio" name="q10" value="2"></input>
+            </label> 
+            <label>3
+                <input type="radio" name="q10" value="3"></input>
+            </label> 
+            <label>4
+                <input type="radio" name="q10" value="4"></input>
+            </label> 
+            <label>5 <span class="clarify-agree"><img src="/assets/images/thumbsUp.png"></span>
+                <input type="radio" name="q10" value="5"></input>
+            </label> 
+            </div>
+            </div>
+            <hr />
         </form>
 
         <!-- --------------------  SUBMIT BUTTON   --------------------- -->
 
-        <button type="submit"><a href="./friends.html">Submit</a></button>
+        <button id="submit" type="submit"><a href="./friends.html">Submit</a></button>
+        <div id="validation-text"></div>
       </section>
     </div>
     <!-- -------------------- FOOTER --------------------- -->
@@ -196,5 +330,99 @@
         /></a>
       </div>
     </footer>
+
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      // Question: What does this code do?
+      $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        // Validate
+        // **********************************************************
+        if ($("#name").val("") || 
+        $("#photo").val("") || 
+        $("input[name='q1']").val("") ||
+        $("input[name='q2']").val("") || 
+        $("input[name='q3']").val("") || 
+        $("input[name='q4']").val("") ||
+        $("input[name='q5']").val("") ||
+        $("input[name='q6']").val("") ||
+        $("input[name='q7']").val("") ||
+        $("input[name='q8']").val("") ||
+        $("input[name='q9']").val("") ||
+        $("input[name='q10']").val("")
+        ){
+            let p = $("<p>");
+            p.text("Please complete the form and profile questions");
+            $("#validation-text").append(p);
+            // break;
+        }
+
+
+
+
+        var newProfile = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: [
+            $("input[name='q1']:checked").val(),
+            $("input[name='q2']:checked").val(),
+            $("input[name='q3']:checked").val(),
+            $("input[name='q4']:checked").val(),
+            $("input[name='q5']:checked").val(),
+            $("input[name='q6']:checked").val(),
+            $("input[name='q7']:checked").val(),
+            $("input[name='q8']:checked").val(),
+            $("input[name='q9']:checked").val(),
+            $("input[name='q10']:checked").val(),
+
+        ]
+        };
+        console.log(newProfile);
+  
+        // Question: What does this code do??
+        $.post("/api/friends", newProfile)
+          .then(function(data) {
+            console.log("survey.html", data);
+            alert("Adding profile...");
+
+
+
+
+            $("#name").val("");
+            $("#photo").val("");
+            $("input[name='q1']").val(""),
+            $("input[name='q2']").val(""),
+            $("input[name='q3']").val(""),
+            $("input[name='q4']").val(""),
+            $("input[name='q5']").val(""),
+            $("input[name='q6']").val(""),
+            $("input[name='q7']").val(""),
+            $("input[name='q8']").val(""),
+            $("input[name='q9']").val(""),
+            $("input[name='q10']").val("")
+
+
+          });
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
 </html>

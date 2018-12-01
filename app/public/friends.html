@@ -13,15 +13,21 @@
     href="/assets/images/friendFavicon.png"">
 </head>
 <body>
-    <section id="">
+    <section id="main">
        <h1>Friend Finder</h1>
        <h2>Congratulations!</h2>
        
        <p> We've found some potential friends for you! </p>
        <hr>
-       <div id="profile-friends">
+       <section id="profile-friends">
 
-       </div>
+<div id="tyler">
+    <img src="https://media.licdn.com/dms/image/C4E03AQEvRaqHN5PGxQ/profile-displayphoto-shrink_200_200/0?e=1548892800&v=beta&t=j_LaEkLw9dt8mbZhRSBH0Xr8jDY2eEIZfENi6MZhRJs">
+    <p>Tyler Guthrie</p>
+
+</div>
+
+</section>
     </section>
 
     <footer>
@@ -31,5 +37,33 @@
             <a href="mailto:guthriet1230@gmail.com"><img id="gmail" src="/assets/images/Footer/GmailLogo.png"></a>
         </div>
     </footer>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+
+    function getProfiles(){
+        $.ajax({ url: "/api/friends", method: "GET" })
+            .then(function(friends) {
+
+
+
+        for(let i=0; i < profileLog.length; i++){
+            let profileDisplay = $("<div>");
+            let p = $("<p>");
+            p.text("Name: " + profile.name)
+            // let profileImage = $("<img>");
+            // profileImage.attr("src",  );
+            //profileDisplay.append(profileImage);
+            profileDisplay.append(p);
+            $("#profile-friends").prepend(profileDisplay);
+        }
+    })
+};
+    getProfiles();
+
+    </script>
 </body>
 </html>

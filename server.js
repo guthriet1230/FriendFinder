@@ -3,10 +3,20 @@
 const path = require('path');
 const express = require("express");
 
+
+
 //* Sets up the Express App
 //* =============================================================
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8000;
+
+
+
+//* Sets up Express for static files
+//* =============================================================
+app.use(express.static('app/public'));
+
+
 
 //* Sets up the Express app to handle data parsing
 //* =============================================================
@@ -14,12 +24,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-let data = [];
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
-  });
-
+//* Defining Routes
+//* =============================================================
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
 
@@ -28,12 +37,3 @@ app.get("/", function(req, res) {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-
-  // Find our form in the DOM using its class name.
-const form = document.getElementByClassName('.contact-form')[0];
-
-// Get the form data with our (yet to be defined) function.
-const data = getFormDataAsJSON(form);
-
-// Do something with the email address.
-//doSomething(data.email);
