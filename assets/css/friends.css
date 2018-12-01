@@ -6,11 +6,11 @@ body{
     background-size: cover;
     font-family: 'Asap', sans-serif;
   }
-
-hr{
+  
+  hr{
     border:.5px solid rgb(162, 162, 162);
-}
-#survey{
+  }
+  #survey{
     margin-left:2.5%;
     margin-right:62.5%;
     margin-top:2%;
@@ -18,112 +18,45 @@ hr{
     background-color:rgb(255, 255, 255, .85);
     padding:1.5%;
     border-radius:10px; 
-}
-/* ------------------------
-HEADER 
--------------------------- */
-
-header{
-    /* margin: 0 10%;
-    margin-top:2%; */
-}
-
-header h1{
+  }
+  /* ------------------------
+  SECTION
+  -------------------------- */
+  section{
+    background-color:rgb(255, 255, 255, .85);
+     
+    
+      margin-left:10%;
+      margin-right:10%;
+      margin-top:5%;
+      margin-bottom:5%;
+  
+      padding:1.5%;
+      border-radius:10px; 
+  }
+  
+  h1{
     color:rgb(107, 107, 250);
     font-size:40px;
     font-weight:900;
     font-family: 'Black Han Sans', sans-serif;
-}
-header h2{
+  }
+  
+  h2{
     font-size:20px;
     font-weight:900;
     margin-top:15px;
     margin-bottom:10px;
     font-family: 'Black Han Sans', sans-serif;
     
-}
-
-header p{
-    margin-bottom:5px;
-}
-
-#about h3{
-    font-weight:bolder;
-    margin-bottom:5px;
-    margin-top:25px;
-    text-decoration: underline;
-    /* font-family: 'Black Han Sans', sans-serif; */
-}
-#about h4{
-    font-size:14px;
-}
-
-#photo{
-    margin-bottom:25px;
-}
-
-#about{
-    /* margin: 0 10%; */
-}
-/* ------------------------
-QUESTIONS 
--------------------------- */
-#section{
-    /* margin:0 10%; */
-}
-input{
-    width:100%;
-    margin-bottom:15px;
-    float:right;
-    position:relative;
-}
-.question{
-margin:2% 0;
-}
-
-label{
-    display:inline-block;
-    width:12%;
-    margin:0 auto;
-    /* text-align:center; */
-}
-label img{
-    width:13px;
-}
-.clarify-agree{
-    font-size:12px;
-    color:grey;
-    font-style: italic; 
-}
-
-.survey-buttons{
-    display:inline;
-    display:flex;
-}
-
-.survey-buttons input{
-    vertical-align:top;
-    display:inline-block;
-}
-
-.question h4{
-    font-family: 'Black Han Sans', sans-serif;
-    font-weight:100;
-}
-
-.question h5{
-    color:rgb(107, 107, 250);
-    font-style: italic;
-    font-weight:100;
-    margin:1% 0;
-    font-family: 'Black Han Sans', sans-serif;
-}
-
-form{
-    /* margin-bottom:100px; */
-}
-button{
-    width:80px;
+  }
+  
+  p{
+  
+  }
+  
+  button{
+    width:120px;
     height:40px;
     background:rgb(107, 107, 250);
     padding:.5% 1%;
@@ -131,15 +64,16 @@ button{
     color:white;
     font-weight:bolder;
     font-size:11px;
-}
-/* ------------------------
-FOOTER 
--------------------------- */
-
-footer {
+    margin-top:20px;
+  }
+  /* ------------------------
+  FOOTER 
+  -------------------------- */
+  
+  footer {
     background-color: rgb(48, 47, 41);
     height: 70px;
-    /* position: fixed; */
+    position: fixed;
     width:100%;
     border-top: 3px rgb(0, 104, 168) solid;
     bottom: 0;
@@ -176,40 +110,41 @@ footer {
     margin-bottom: 10px;
     width: 35px;
   }
-
-
-  @media only screen and (max-width: 1400px) {
-    #survey{
-        margin-left:2.5%;
-        margin-right:50%;
-        margin-top:2%;
-        margin-bottom:7.5%;
-        background-color:rgb(255, 255, 255, .85);
-        padding:1.5%;
-        border-radius:10px; 
-    }
-}
-
+  
+  
+  
   @media only screen and (max-width: 1080px) {
-    #survey{
-        margin-left:2.5%;
-        margin-right:50%;
-        margin-top:2%;
-        margin-bottom:7.5%;
+    section{
+        margin-left:20%;
+        margin-right:20%;
+        margin-top:10%;
+        margin-bottom:20%;
         background-color:rgb(255, 255, 255, .85);
         padding:1.5%;
         border-radius:10px; 
     }
-}
-
-@media only screen and (max-width: 960px) {
-    #survey{
+  }
+  
+  @media only screen and (max-width: 900px) {
+    section{
         margin-left:10%;
         margin-right:10%;
-        margin-top:2%;
-        margin-bottom:7.5%;
+        margin-top:10%;
+        margin-bottom:10%;
         background-color:rgb(255, 255, 255, .85);
         padding:1.5%;
         border-radius:10px; 
     }
-}
+  }
+  
+  @media only screen and (max-width: 680px) {
+    section{
+        margin-left:10%;
+        margin-right:10%;
+        margin-top:10%;
+        margin-bottom:10%;
+        background-color:rgb(255, 255, 255, .85);
+        padding:1.5%;
+        border-radius:10px; 
+    }
+  }
