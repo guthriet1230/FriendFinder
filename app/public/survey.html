@@ -32,7 +32,7 @@
         <h3>About You</h3>
         <h4>Name (Required)</h4>
         <input type="text" id="name" class="form-control" required="" />
-
+        <!-- <input type="text" id="name"> -->
         <h4>Link to Photo Image (Required)</h4>
         <input type="text" id="photo" class="form-control" required="" />
         <hr />
@@ -41,7 +41,8 @@
       <section id="question">
         <!-- --------------------  QUESTION 1  --------------------- -->
 
-        <form name="survey" osubmit="return onSubmit()">
+        <!-- <form name="survey" osubmit="return onSubmit()"> -->
+        <form name="survey">
           <div class="question">
             <h4>Question 1:</h4>
             <h5>
@@ -68,11 +69,10 @@
           <hr />
           <!-- --------------------  QUESTION 2  --------------------- -->
        
-            
         <div class="question">
                 <h4>Question 2:</h4>
                 <h5>
-                        You enjoy being outdoors more than indoors.
+                        You think life moves too slow.
                 </h5>
                 <div class="survey-buttons">
                     <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
@@ -93,8 +93,6 @@
                 </div>
                 </div>
                 <hr />
-
-
 
           <!-- --------------------  QUESTION 3  --------------------- -->
          
@@ -127,7 +125,7 @@
         <div class="question">
                 <h4>Question 4:</h4>
                 <h5>
-                        You enjoy poetry.
+                        You think it aint easy being green.
                 </h5>
                 <div class="survey-buttons">
                     <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
@@ -233,7 +231,7 @@
         <div class="question">
             <h4>Question 8:</h4>
             <h5>
-                    You enjoy spinning yarn.
+                    You're cold and you think winter is coming.
             </h5>
             <div class="survey-buttons">
             <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
@@ -260,7 +258,7 @@
         <div class="question">
             <h4>Question 9:</h4>
             <h5>
-                    You love to shop at Tommy Bahama.
+                    You're goofy.
             </h5>
             <div class="survey-buttons">
             <label>1 <span class="clarify-agree"><img src="/assets/images/thumbsDown.png"></span>
@@ -308,11 +306,13 @@
             </div>
             </div>
             <hr />
+            <!-- <a href="./friends.html"><input type = "submit" id="submit"></a> -->
+            <button id="submit" type="submit"><a href="./friends.html">Submit</a></button>
         </form>
 
         <!-- --------------------  SUBMIT BUTTON   --------------------- -->
 
-        <button id="submit" type="submit"><a href="./friends.html">Submit</a></button>
+        
         <div id="validation-text"></div>
       </section>
     </div>
@@ -338,33 +338,32 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
     <script type="text/javascript">
-      // Question: What does this code do?
+      
+      console.log($("input[name='q1']:checked").val())
       $("#submit").on("click", function(event) {
         event.preventDefault();
-
+        // console.log(if$("#name").val())
         // Validate
         // **********************************************************
-        if ($("#name").val("") || 
-        $("#photo").val("") || 
-        $("input[name='q1']").val("") ||
-        $("input[name='q2']").val("") || 
-        $("input[name='q3']").val("") || 
-        $("input[name='q4']").val("") ||
-        $("input[name='q5']").val("") ||
-        $("input[name='q6']").val("") ||
-        $("input[name='q7']").val("") ||
-        $("input[name='q8']").val("") ||
-        $("input[name='q9']").val("") ||
-        $("input[name='q10']").val("")
+        if (
+        $("#name").val() === "" || 
+        $("#photo").val() === "" ||
+        $("input[name='q1']").val() === "" ||
+        $("input[name='q2']").val() === "" || 
+        $("input[name='q3']").val() === "" || 
+        $("input[name='q4']").val() === "" ||
+        $("input[name='q5']").val() === "" ||
+        $("input[name='q6']").val() === "" ||
+        $("input[name='q7']").val() === "" ||
+        $("input[name='q8']").val() === "" ||
+        $("input[name='q9']").val() === "" ||
+        $("input[name='q10']").val() === "" 
         ){
             let p = $("<p>");
             p.text("Please complete the form and profile questions");
             $("#validation-text").append(p);
             // break;
-        }
-
-
-
+        } else {
 
         var newProfile = {
           name: $("#name").val().trim(),
@@ -379,21 +378,19 @@
             $("input[name='q7']:checked").val(),
             $("input[name='q8']:checked").val(),
             $("input[name='q9']:checked").val(),
-            $("input[name='q10']:checked").val(),
-
+            $("input[name='q10']:checked").val()
         ]
         };
+    
         console.log(newProfile);
   
-        // Question: What does this code do??
-        $.post("/api/friends", newProfile)
-          .then(function(data) {
-            console.log("survey.html", data);
-            alert("Adding profile...");
+        /////////////////////////////////
+        $.post("/api/friends", newProfile, function(data) {
+            // console.log("survey.html", data);
+            // alert("Adding profile...");
 
-
-
-
+        
+            // Clearing the form
             $("#name").val("");
             $("#photo").val("");
             $("input[name='q1']").val(""),
@@ -408,21 +405,11 @@
             $("input[name='q10']").val("")
 
 
-          });
-      });
+          });}
+      }
+      );
+    
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
   </body>
 </html>
