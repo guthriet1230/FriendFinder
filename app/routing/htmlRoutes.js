@@ -12,9 +12,9 @@ app.get("/survey", function(req, res) {
   // console.log("hello - survey");
 });
 
-app.get("/friends", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/friends.html"));
-  // console.log("hello - friends");
-});
+// app.get("/friends", function(req, res) {
+//   res.sendFile(path.join(__dirname, "../public/friends.html"));
+//   // console.log("hello - friends");
+// });
 
 };

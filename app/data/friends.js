@@ -192,9 +192,6 @@ let profileLog = [
       ]
   }
   
-
-
-  
 ];
 
 module.exports = profileLog;

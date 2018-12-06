@@ -7,11 +7,20 @@
     <title>FF - Survey</title>
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Asap|Black+Han+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/survey.css" />
     <link rel="shortcut icon" type="image/png"
     href="/assets/images/friendFavicon.png"">
-    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#modal').modal('hide');
+        });
+    </script> -->
   </head>
   <body>
     <!-- -------------------- HEADER --------------------- -->
@@ -307,8 +316,10 @@
             </div>
             <hr />
             <!-- <a href="./friends.html"><input type = "submit" id="submit"></a> -->
-            <button id="submit" type="submit"><a href="./friends.html">Submit</a></button>
+            <button id="submit" type="submit">Submit</button>
         </form>
+
+       
 
         <!-- --------------------  SUBMIT BUTTON   --------------------- -->
 
@@ -316,7 +327,30 @@
         <div id="validation-text"></div>
       </section>
     </div>
-    <!-- -------------------- FOOTER --------------------- -->
+
+
+     <!-- --------------------  Modal   --------------------- -->
+     <div class="modal" id=modal tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Best Friend</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="modal-content">
+              
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" id= "close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- -------------------- FOOTER --------------------- -->
     <footer>
       <div class="footer-container">
         <a href="https://github.com/guthriet1230"
@@ -331,15 +365,10 @@
       </div>
     </footer>
 
+ 
 
-
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+    
     <script type="text/javascript">
-      
-      console.log($("input[name='q1']:checked").val())
       $("#submit").on("click", function(event) {
         event.preventDefault();
         // console.log(if$("#name").val())
@@ -381,15 +410,13 @@
             $("input[name='q10']:checked").val()
         ]
         };
-    
         console.log(newProfile);
   
         /////////////////////////////////
         $.post("/api/friends", newProfile, function(data) {
-            // console.log("survey.html", data);
+            console.log("Adding profile...");
             // alert("Adding profile...");
 
-        
             // Clearing the form
             $("#name").val("");
             $("#photo").val("");
@@ -403,12 +430,40 @@
             $("input[name='q8']").val(""),
             $("input[name='q9']").val(""),
             $("input[name='q10']").val("")
+            console.log(data);
+            //post the values  
+            // if (data.length >1){
+            //     console.log("hello!")
+            // }
+        
 
-
-          });}
-      }
-      );
+     function getProfiles() {
+            let profileDisplay = $("<div>");
+            let p = $("<p>");
+            let profileImage = $("<img>");
+            
+            p.text(data.name);
+            profileImage.attr("src", data.photo);
+            profileDisplay.append(profileImage);
+            profileDisplay.append(p);
+            console.log(profileDisplay);
+            $("#modal-content").prepend(profileDisplay);
     
+      }
+
+ getProfiles();
+
+            });
+    
+        }
+    
+          $("#modal").show();
+          //end on click
+      });
+      $("#close-button").on("click", function(event) {
+            $("#modal").hide();
+      });
+
     </script>
 
   </body>

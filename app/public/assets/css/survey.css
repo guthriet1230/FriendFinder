@@ -139,6 +139,27 @@ button{
     margin-top:5px;
 }
 
+#modal-content{
+    display:flex;
+    justify-content: center;
+}
+
+#modal-content img{
+    max-width:100%;
+}
+
+
+#modal-content p{
+    font-weight:bolder;
+
+    text-align:center;
+    /* position:absolute; */
+    align-content: space-around;
+    /* bottom:400px; */
+    margin:5px;
+    margin-top:10px;
+}
+
 /* ------------------------
 FOOTER 
 -------------------------- */

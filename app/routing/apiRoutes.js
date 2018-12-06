@@ -10,7 +10,7 @@ module.exports = function(app) {
     function getSum(total, num) {
       return total + num;
   }
-    //* Define the user and compare the information to the 'friends' array to identify what to do with the information
+    // Define the user and compare the information to the 'friends' array to identify what to do with the information
     let user = req.body;
     let userScores = [];
     let friendNumbs = [];
@@ -20,58 +20,71 @@ module.exports = function(app) {
     console.log("userScores: ", userScores);
     // console.log(userScores);
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//* looping through each person in the FRIENDS ARRAY
+//?????????????????????????_FOR LOOP ONE_??????????????????????????????????????
+// looping through each person in the FRIENDS ARRAY
 for (i=0;i<friends.length; i++){
   // for (i=0; i<1; i++){
-  //* what each person scored on the survey
+  // what each person scored on the survey
   let friendScores = [];
-  //* differences in score for each question
+  // differences in score for each question
   let friendDiff = [];
 
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //* looping through each person to COMPARE SCORES
+ //???????????????????????_FOR LOOP TWO_????????????????????????????????????????
+  // looping through each person to COMPARE SCORES
   for (j=0; j<friends[i].scores.length; j++){
-    //* array of each 'friends' scores
+    // array of each 'friends' scores
     friendScores.push(friends[i].scores[j]);
-    //* find the difference between user scores and 'friend' scores
+    // find the difference between user scores and 'friend' scores
     let scoreDiff = Math.abs(userScores[j] - friends[i].scores[j]);
-    //* push the difference in the 'friends' scores against the user scores into an array
+    // push the difference in the 'friends' scores against the user scores into an array
     friendDiff.push(scoreDiff); 
       }
- //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-      //* total difference in scores (if this number is lowest, you've found your new best friend!)
+//?????????????????????????_BACK TO ONE_??????????????????????????????????????
+      // total difference in scores (if this number is lowest, you've found your new best friend!)
       let friendDiffTotal = friendDiff.reduce(getSum);
       // console.log(friendDiffTotal);
       friendNumbs.push(friendDiffTotal);
-      console.log("friend: ", friendNumbs);
+      console.log("friendNumbs: ", friendNumbs);
       // console.log('/n ---------------------------------------' + '\n')
-    
-
-      
     }
+
+//??????????????????????????_BACK TO GLOBAL_?????????????????????????????????????
     console.log('/n ---------------------------------------' + '\n')
     const lowScore = Math.min.apply(null, friendNumbs);
     console.log("LowScore: ", lowScore);
-    for (q=0;q<friends.length; q++){  
-      // console.log("hello")
-      if (friends[q] === lowScore){
-        console.log("HI FRIEND: ", friends[q]);
-        const bff = friends[q];
-        console.log("BFF: ", bff);
+
+    let bffNumb = [];
+    for (q=0;q<friendNumbs.length; q++){  
+      // console.log(friendNumbs[q]);
+      if (friendNumbs[q] === lowScore){
+        // console.log("HI FRIEND: ", friendNumbs[q]);
+        // console.log(friendNumbs.indexOf(friendNumbs[q]));
+        bffNumb.push(friendNumbs.indexOf(friendNumbs[q]));
+        // const bff = friendNumbs[q];
+        // console.log("bffNumb: ", bffNumb);
+      }
+    // console.log(friends[bffNumb]);
     }
-  }
+// let bff;
+//     if (bffNumb.length > 1) {
+//       let bff = bffNumb[0];
+//       console.log("BFF: ", bff);
+//  } else{
+
+    //** OUR NEW BEST FRIEND! */
+    let bff = friends[bffNumb];
+    console.log("BFF: ", bff);
+//  }
+    // console.log("BFF: ", bff);
+    
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//! if the friendDiffTotal is the lowest, then push that friend's information to the front end to display in a modal
-
-
-// let lowScore = Math.min.apply(null, friendNumbs);
-// console.log(lowScore);
-
+//! Need to get the information of that user & push it to the front end 
 //* send the matched user data to the front-end
-
+if (bff){
+  friends.push(bff);
+  res.json(bff);
+}
 
     //* save the user to the database
     // if (friends){
