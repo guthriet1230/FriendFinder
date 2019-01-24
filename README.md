@@ -8,9 +8,9 @@ https://friend-finder-98593.herokuapp.com/
 
 Technology Used
 ------
-- Javascript (JSON): DOM manipulation
-- Node: Logic and Backend script
-- Expres: Server & Routing
+- HTML/CSS/Javascript
+- Node.js: Logic & Backend Script
+- Express.js: Server & Routing
 - Heroku: Deployment
 
 Known Issues
